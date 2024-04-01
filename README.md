@@ -15,6 +15,7 @@ The deployment notebooks used in this repo uses Huggingface as model provider fo
 | Huggingace Model ID | Deploy Notebook | Inference Notebook |
 | -- | -- | -- |
 | facebook/musicgen-large | [Deploy](musicgen-large/deploy-musicgen-large.ipynb) | [Inference](musicgen-large/infer-async.ipynb) |
+| facebook/musicgen-medium | [Deploy](musicgen-medium/deploy-musicgen-medium.ipynb) | [Inference](musicgen-medium/infer-async.ipynb) |
 | facebook/musicgen-small | [Deploy](musicgen-small/deploy-musicgen-small.ipynb) | [Inference](musicgen-small/infer-async.ipynb) |
 
 ## References
