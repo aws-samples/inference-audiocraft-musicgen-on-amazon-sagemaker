@@ -1,12 +1,16 @@
 ## Inference Audiocraft Musicgen on Amazon SageMaker
 
-Deploy Audiocraft Musicgen on Amazon SageMaker using SageMaker Endpoints for Async Inference.
+Deploy Audiocraft Musicgen on Amazon SageMaker using SageMaker Endpoints for Async Inference. 
+
+This solution demonstrates deploying AudioCraft MusicGen models from HuggingFace on Amazon SageMaker. MusicGen models take natural language text as input prompt and generate music as output.
+
+![MusicGen Models](assets/image.png)
 
 AudioCraft consists of three models: MusicGen, AudioGen, and EnCodec. This repo aims to deploy MusicGen models on Amazon SageMaker for Asynchronous inferencing.
 
-## Asynchronous Inference Sequence flow for facebook/musicgen-large on Amazon SageMaker
+## Asynchronous Inference Sequence flow for huggingface model facebook/musicgen-large on Amazon SageMaker
 
-![alt text](image.png)
+![alt text](assets/image-1.png)
 
 ## Deployment and inference notebooks
 
@@ -15,6 +19,7 @@ The deployment notebooks used in this repo uses Huggingface as model provider fo
 | Huggingace Model ID | Deploy Notebook | Inference Notebook |
 | -- | -- | -- |
 | facebook/musicgen-large | [Deploy](musicgen-large/deploy-musicgen-large.ipynb) | [Inference](musicgen-large/infer-async.ipynb) |
+| facebook/musicgen-medium | [Deploy](musicgen-medium/deploy-musicgen-medium.ipynb) | [Inference](musicgen-medium/infer-async.ipynb) |
 | facebook/musicgen-small | [Deploy](musicgen-small/deploy-musicgen-small.ipynb) | [Inference](musicgen-small/infer-async.ipynb) |
 
 ## References
