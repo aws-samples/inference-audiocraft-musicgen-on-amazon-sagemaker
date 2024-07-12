@@ -29,20 +29,13 @@ import urllib, time
 from botocore.exceptions import ClientError
 import random
 
-def get_output(sm_session, output_location, failure_location):
+def get_output(sm_session, output_location):
     output_url = urllib.parse.urlparse(output_location)
-    failure_url = urllib.parse.urlparse(failure_location)
-    bucket = output_url.netloc
-    key = output_url.path[1:]
+    
     icons = ["🪘","🪇","🎷","🎸","🎺","🎻","🥁", "🪗", "🪕"]
     print("generating music")
     while True:
         try:
-            if len(sm_session.list_s3_files(bucket, failure_url.path[1:])):
-                print('🔕 Error generating music')
-                res = sm_session.read_s3_file(bucket=failure_url.netloc, key_prefix=failure_url.path[1:])
-                print(res)
-                break
             res = sm_session.read_s3_file(bucket=output_url.netloc, key_prefix=output_url.path[1:])
             print("\nMusic is ready!🎉")
             return res
