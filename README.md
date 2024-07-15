@@ -12,13 +12,13 @@ AudioCraft consists of three models: MusicGen, AudioGen, and EnCodec. This repo 
 
 ![Solution Overview](assets/Musicgen-on-Amazon-SageMaker.png)
 
-1. The user invokes the SageMaker Async Endpoint using a SageMaker Studio Notebook.
-2. The input payload is uploaded to S3 bucket for inference. The payload consists of both the prompt and the music generation parameters. The generated music will be downloaded from S3 bucket.
+1. The user invokes the SageMaker Asynchronous endpoint using a SageMaker Studio Notebook.
+2. The input payload is uploaded to an S3 bucket for inference. The payload consists of both the prompt and the music generation parameters. The generated music will be downloaded from the S3 bucket.
 3. The `facebook/musicgen-large`  model will be deployed to a SageMaker Asynchronous endpoint. This endpoint will be used to infer for music generation.
-4. The [HuggingFace Inference Containers](https://github.com/aws/deep-learning-containers/blob/master/available_images.md#huggingface-inference-containers) image will be used as a base image. We will use an image that supports PyTorch 2.1.0 with HuggingFace transformers framework.
-5. The SageMaker `HuggingFaceModel` will be deployed to a SageMaker Async endpoint.
-6. The HuggingFace model, `facebook/musicgen-large` in the scope of this blog, will be uploaded to S3 during the deployment. Also, during the inference the generated outputs will be uploaded to S3.
-7. Amazon SNS topics to notify the success and failure are defined as a part of SageMaker async inference configuration.
+4. The [HuggingFace Inference Containers](https://github.com/aws/deep-learning-containers/blob/master/available_images.md#huggingface-inference-containers) image will be used as a base image. We will use an image that supports PyTorch 2.1.0 with a HuggingFace transformers framework.
+5. The SageMaker `HuggingFaceModel` will be deployed to a SageMaker Asynchronous endpoint.
+6. The HuggingFace model, `facebook/musicgen-large` in the scope of this blog, will be uploaded to S3 during the deployment. Also, during the inference, the generated outputs will be uploaded to S3.
+7. Amazon SNS topics to notify the success and failure are defined as a part of SageMaker Asynchronous inference configuration.
 
 
 ## Asynchronous Inference Sequence flow for huggingface model facebook/musicgen-large on Amazon SageMaker
@@ -43,7 +43,8 @@ The deployment notebooks used in this repo uses Huggingface as model provider fo
 - https://sagemaker.readthedocs.io/en/stable/frameworks/huggingface/sagemaker.huggingface.html#hugging-face-model
 - https://sagemaker.readthedocs.io/en/stable/api/inference/predictors.html#sagemaker.predictor.Predictor.predict
 - https://github.com/aws/amazon-sagemaker-examples/blob/main/async-inference/Transcription_on_SM_endpoint.ipynb
-
+- https://docs.aws.amazon.com/sagemaker/latest/dg/large-model-inference-uncompressed.html
+- https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference-create-endpoint.html
 
 ## Security
 
