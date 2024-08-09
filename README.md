@@ -2,6 +2,8 @@
 
 Deploy Audiocraft Musicgen on Amazon SageMaker using SageMaker Endpoints for Async Inference. 
 
+👉 [Blog: Inference AudioCraft MusicGen models using Amazon SageMaker](https://aws.amazon.com/blogs/machine-learning/inference-audiocraft-musicgen-models-using-amazon-sagemaker/)
+
 This solution demonstrates deploying AudioCraft MusicGen models from HuggingFace on Amazon SageMaker. MusicGen models take natural language text as input prompt and generate music as output.
 
 ![MusicGen Models](assets/image.png)
